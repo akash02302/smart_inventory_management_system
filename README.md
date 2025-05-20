@@ -2,6 +2,90 @@
 
 A full-stack application for intelligent inventory management and demand forecasting.
 
+---
+
+## Tools & Technologies Used
+
+- **Backend:**
+  - Python 3.9
+  - FastAPI
+  - XGBoost
+  - Pandas
+  - NumPy
+  - Scikit-learn
+  - Pydantic & pydantic-settings
+  - Joblib
+  - Requests
+  - Python-dotenv
+  - Uvicorn
+- **Frontend:**
+  - React
+  - Material-UI (MUI)
+  - @mui/x-date-pickers
+  - Chart.js & react-chartjs-2
+  - Axios
+- **DevOps & Deployment:**
+  - Docker
+  - Docker Compose
+  - Nginx (for serving frontend)
+- **Other:**
+  - Git & GitHub
+  - VSCode (recommended)
+
+---
+
+## Step-by-Step Setup & Development Process
+
+### 1. Project Initialization
+- Set up project directories for backend and frontend.
+- Initialize git and create a `.gitignore` file.
+
+### 2. Backend Setup
+- Created FastAPI app structure with modular directories (`api`, `core`, `models`, `services`, `utils`).
+- Added requirements in `backend/requirements.txt`.
+- Implemented configuration management with `pydantic-settings` and `.env` file support.
+- Built feature engineering pipeline (lag, rolling, categorical encoding, date features).
+- Implemented XGBoost model training, saving, and loading with feature name alignment.
+- Exposed REST API endpoints:
+  - `/api/predict` for demand prediction
+  - `/api/recommend` for stock recommendations
+  - `/api/train` for model training
+- Integrated WeatherAPI and Calendarific for live weather and festival data.
+- Added Dockerfile for backend containerization.
+
+### 3. Frontend Setup
+- Bootstrapped React app with Material-UI and Chart.js for UI and visualization.
+- Built dashboard, prediction, and inventory management pages.
+- Implemented API service layer with Axios.
+- Ensured robust form handling and type conversion for API requests.
+- Added Dockerfile and Nginx config for production build.
+
+### 4. Data & Model
+- Used a CSV dataset for inventory, demand, weather, and festival simulation.
+- Ensured robust feature engineering and matching of features between training and prediction.
+- Saved model and feature names for consistent inference.
+
+### 5. Deployment
+- Wrote `docker-compose.yml` to orchestrate backend and frontend containers.
+- Used volume mounts for data/model persistence.
+- Provided environment variable support for API keys.
+
+### 6. Testing & Debugging
+- Used FastAPI docs (`/docs`) for API testing.
+- Handled common errors: feature mismatch, data types, missing model, etc.
+- Ensured frontend displays prediction results correctly and handles errors.
+
+### 7. Version Control
+- Used git for source control.
+- Added `.gitignore` to exclude unnecessary files and large data/model files.
+- Provided instructions for pushing to GitHub.
+
+---
+
+## For detailed setup, see the sections below in this README.
+
+If you need a more granular breakdown or want to add more details, let me know!
+
 ## Features
 
 - Demand forecasting using XGBoost
